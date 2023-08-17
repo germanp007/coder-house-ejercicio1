@@ -3,7 +3,7 @@ class ProductManager {
     this.products = [];
   }
   addProduct(title, description, price, thumbnail, code, stock) {
-    if (!title && !description && !price && !thumbnail && !code && !stock)
+    if (!title || !description || !price || !thumbnail || !code || !stock)
       return console.log("Must fill all fields");
     if (this.products.some((element) => element.code === code))
       return console.log(`This code ${code} already exists, try another one`);
